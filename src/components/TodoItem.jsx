@@ -7,9 +7,9 @@ const TodoItem = (props) => {
     const callbackDelete = props.callbackDelete;
 	return (
 		<div className='bg-gray-400 flex items-center justify-center p-5 space-x-4'>
-			<input type='checkbox' onChange={callback.bind(this,todo.id)} chacked={todo.isFinished} />
+			<input type='checkbox' onChange={callback.bind(this,todo.id)} checked={todo.completed} />
             {
-                todo.isFinshed ?  <p className='line-through'>{todo.title}</p> : <p>{todo.title}</p>             
+                todo.completed ?  <p className='line-through'>{todo.title}</p> : <p>{todo.title}</p>             
             }
 			<button className='bg-red-500 text-white font-bold py-2 px-4 rounded' onClick={callbackDelete.bind(this,todo.id)}>
 				Delete
